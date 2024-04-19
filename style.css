@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color: rgb(180, 38, 13);
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* 100% chiều cao của viewport */
+    overflow: hidden; /* Ngăn cuộn trang */
+    font-family: "Poppins";
+}
+
+.card {
+    position: relative;
+    margin: 120px;
+    width: 320px;
+    height: 400px;
+    background: rgb(55, 43, 43);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    left: 490px;
+}
+
+.card__heart, .card__cart {
+    font-size: 25px;
+    position: absolute;
+    top: 15px;
+}
+
+.card__heart {
+    left: 20px;
+}
+
+.card__cart {
+    right: 20px;
+}
+
+.card__img {
+    position: relative;
+    width: 100%;
+    left: -22px; /* Di chuyển sang trái 20px */
+    right: unset; /* Hủy bỏ giá trị right */
+    transition: 0.5s;
+}
+
+.card__img img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+}
+
+.card__title, .card__price {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.card__title {
+    color: var(--color);
+}
+
+
+.card__color, .card__size{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card__size span {
+    padding: 2px 10px;
+    background: #dadada;
+    color: black;
+    font-weight: bolder; 
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.card__color span{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.card__color--red{
+    background: red;
+}
+.card__color--green{
+    background: green;
+}
+.card__color--black{
+    background: black;
+}
+
+
+.card__action button {
+    background: var(--color);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 15px 25px; 
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.card__action button:hover{
+    transform: scale(0.9);
+}
+
+.card:hover .card__img{
+    transform: translateY(-70px)  rotate(-20deg);
+}
+
+.card:hover .card__title{
+    transform: translate(-60px, -50px)  ;
+}
+
+.card:hover .card__price{
+    transform: translate(-116px, -50px)  ;
+}
+.card__size,
+.card__color,
+.card__action {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(80px); /* Khoảng cách di chuyển từ dưới lên trên */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Thêm hiệu ứng chuyển động */
+    transition-delay: 0.4s;
+}
+
+.card:hover .card__size,
+.card:hover .card__color,
+.card:hover .card__action {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover .card__size {
+    margin-top: 0px;
+}
+

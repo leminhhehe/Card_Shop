@@ -1,0 +1,152 @@
+:root{
+    --color: rgb(180, 38, 13);
+}
+.card1 {
+    position: relative;
+    margin: 120px;
+    width: 320px;
+    height: 400px;
+    background: rgb(55, 43, 43);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    right: 0px;
+    transform: translate(-60px, -518px)
+}
+
+.card__heart1, .card__cart1 {
+    font-size: 25px;
+    position: absolute;
+    top: 15px;
+}
+
+.card__heart1 {
+    left: 20px;
+}
+
+.card__cart1 {
+    right: 20px;
+}
+
+.card__img1 {
+    position: relative;
+    width: 100%;
+    left: 22px; /* Di chuyển sang trái 20px */
+    transform: translate(-0px, -22px);
+    transition: 0.5s;
+}
+
+.card__img1 img {
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__title1, .card__price1 {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    transform: translate(-0px, -80px)
+}
+
+.card__title1 {
+    color: var(--color);
+}
+
+
+.card__color1, .card__size1{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card__size1 span {
+    padding: 2px 10px;
+    background: #dadada;
+    color: black;
+    font-weight: bolder; 
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.card__color1 span{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.card__color--red{
+    background: red;
+}
+.card__color--green{
+    background: green;
+}
+.card__color--black{
+    background: black;
+}
+
+.card__action1 button {
+    background: var(--color);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 15px 25px; 
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.card__size1, .card__action1, .card__color1{
+    transform: translate(0px, -72px)
+}
+
+.card__action1 button:hover{
+    transform: scale(0.9);
+}
+
+.card1:hover .card__img1 {
+    transform: translateY(-115px) rotate(-20deg);
+}
+
+.card1:hover .card__title1 {
+    transform: translate(-35px, -140px);
+}
+.card1:hover .card__price1 {
+    transform: translate(-115px, -140px);
+}
+
+.card__size1,
+.card__color1,
+.card__action1 {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(150px); /* Khoảng cách di chuyển từ dưới lên trên */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card1:hover .card__size1,
+.card1:hover .card__color1,
+.card1:hover .card__action1 {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(50px); /* Di chuyển lên 50px khi hover */
+    transition-delay: 0.4s;
+}
+
+.card1 .card__size1 {
+    margin-top: 200px; /* Đặt vị trí bắt đầu (150px + 50px) */
+}
+
+.card1:hover .card__size1 {
+    margin-top: -133px; /* (150px - 50px) */
+}
+
+
+
+

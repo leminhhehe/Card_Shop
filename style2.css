@@ -1,0 +1,147 @@
+:root{
+    --color: rgb(180, 38, 13);
+}
+.card2 {
+    position: relative;
+    margin: 120px;
+    width: 320px;
+    height: 400px;
+    background: rgb(55, 43, 43);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    left: 1100px;
+    transform: translate(-60px, -1043px)
+}
+.card__heart2, .card__cart2 {
+    font-size: 25px;
+    position: absolute;
+    top: 15px;
+}
+
+.card__heart2 {
+    left: 20px;
+}
+
+.card__cart2 {
+    right: 20px;
+}
+
+.card__img2 {
+    position: relative;
+    width: 100%;
+    left: 22px; /* Di chuyển sang trái 20px */
+    transform: translate(-0px, 8px);
+    transition: 0.5s;
+}
+
+.card__img2 img {
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__title2, .card__price2 {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    transform: translate(-0px, 5px)
+}
+.card__title2 {
+    color: var(--color);
+}
+
+.card__color2, .card__size2{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+ 
+}
+
+.card__size2 span {
+    padding: 2px 10px;
+    background: #dadada;
+    color: black;
+    font-weight: bolder; 
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.card__color2 span{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.card__color--red{
+    background: red;
+}
+.card__color--green{
+    background: green;
+}
+.card__color--black{
+    background: black;
+}
+
+.card__size2 , .card__color2 , .card__action2{
+    transform: translate(-0px, 15px)
+}
+
+.card__action2 button {
+    background: var(--color);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 15px 25px; 
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.card__action2 button:hover{
+    transform: scale(0.9);
+}
+
+.card2:hover:hover .card__img2 {
+    transform: translateY(-75px) rotate(-20deg);
+}
+
+.card2:hover .card__title2 {
+    transform: translate(-15px, -45px);
+}
+.card2:hover .card__price2 {
+    transform: translate(-115px, -45px);
+}
+
+
+.card__size2,
+.card__color2,
+.card__action2 {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(150px); /* Khoảng cách di chuyển từ dưới lên trên */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card2:hover .card__size2,
+.card2:hover .card__color2,
+.card2:hover .card__action2 {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(50px); /* Di chuyển lên 50px khi hover */
+    transition-delay: 0.4s;
+}
+
+.card2 .card__size2 {
+    margin-top: 200px; /* Đặt vị trí bắt đầu (150px + 50px) */
+}
+
+.card2:hover .card__size2 {
+    margin-top: -40px; /* (150px - 50px) */
+}
